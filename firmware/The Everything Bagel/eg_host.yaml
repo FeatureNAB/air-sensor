@@ -1,0 +1,124 @@
+substitutions:
+  mock_temp: "22.3"
+  mock_hum: "47"
+  mock_pm10: "5"
+  mock_pm25: "8"
+  mock_pm40: "12"
+  mock_pm100: "300"
+  mock_voc: "42"
+  mock_nox: "56"
+  mock_co2: "1214"
+
+esphome:
+  name: sdl
+  includes:
+    - aqi_algo.h
+    - display_renderer.h
+
+# 1. Define Fonts (Upload .ttf files to config folder)
+font:
+  - file: "gfonts://Material+Symbols+Outlined"
+    id: thermometer
+    size: 20
+    glyphs: ["\U0000e1ff"]
+  
+  - file: "gfonts://Material+Symbols+Outlined"
+    id: droplet
+    size: 20
+    glyphs: ["\U0000f87e"]
+
+  - file: 'gfonts://Montserrat'
+    id: montserrat_14
+    size: 14
+    glyphs: "!\"%()+=,-_.:°0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ abcdefghijklmnopqrstuvwxyzåäö"
+
+  - file: 'gfonts://Montserrat'
+    id: montserrat_20
+    size: 20
+    glyphs: "!\"%()+=,-_.:°0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ abcdefghijklmnopqrstuvwxyzåäö"
+    
+  - file: 'gfonts://Montserrat'
+    id: montserrat_48
+    size: 48
+    glyphs: "!\"%()+=,-_.:°0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ abcdefghijklmnopqrstuvwxyzåäö"
+
+sensor:
+  - platform: template
+    name: "Calculated AQI"
+    id: aqi_result 
+    update_interval: 5s
+    lambda: |-
+      int result = calculate_composite_aqi(
+          id(pm25).state,
+          id(pm100).state,
+          id(co2).state, 
+          id(voc).state
+      );
+      
+      return result;
+
+  - platform: template
+    id: pm10
+    lambda: return ${mock_pm10};
+    update_interval: 1s
+
+  - platform: template
+    id: pm25
+    lambda: return ${mock_pm25};
+    update_interval: 1s
+
+  - platform: template
+    id: pm40
+    lambda: return ${mock_pm40};
+    update_interval: 1s
+
+  - platform: template
+    id: pm100
+    lambda: return ${mock_pm100};
+    update_interval: 1s
+
+  - platform: template
+    id: nox
+    lambda: return ${mock_nox};
+    update_interval: 1s
+
+  - platform: template
+    id: co2
+    lambda: return ${mock_co2};
+    update_interval: 1s
+  
+  - platform: template
+    id: voc
+    lambda: return ${mock_voc};
+    update_interval: 1s
+
+  - platform: template
+    id: temp
+    lambda: return ${mock_temp};
+    update_interval: 1s
+  
+  - platform: template
+    id: hum
+    lambda: return ${mock_hum};
+    update_interval: 1s
+
+host:
+
+display:
+  - platform: sdl
+    # ... display setup ...
+    dimensions:
+      width: 128
+      height: 296
+    pages:
+      - id: page_functional
+        lambda: |-
+          draw_main_screen(
+              it,
+              id(aqi_result).state,
+              id(temp).state,
+              id(hum).state,
+              id(pm25).state,
+              id(co2).state,
+              id(voc).state
+          );

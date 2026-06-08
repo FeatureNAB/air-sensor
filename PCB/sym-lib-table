@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "smart_sensor_battery")(type "KiCad")(uri "${KIPRJMOD}/smart_sensor_battery.kicad_sym")(options "")(descr ""))
+  (lib (name "ePaperBreakout-eagle-import")(type "KiCad")(uri "${KIPRJMOD}/ePaperBreakout-eagle-import.kicad_sym")(options "")(descr ""))
+)

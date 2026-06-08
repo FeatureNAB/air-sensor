@@ -1,0 +1,60 @@
+esphome:
+  name: "air"
+
+# Specify that we're using the ESP32-C6 
+esp32:
+  board: esp32-c6-devkitc-1
+  framework:
+    type: esp-idf
+
+wifi:
+  ap:
+    ssid: "AirAP"
+    password: "password"
+
+# So we can use this device standalone, without Home Assitant
+web_server:
+
+# This lets us see logs over USB to understand what the ESP is doing. 
+# Very Helpful during development.
+logger:
+
+# Define which physical pins the I2C device is communicating over
+i2c:
+  sda: GPIO22 
+  scl: GPIO23
+  scan: true
+
+sensor:
+  - platform: sen6x
+    type: SEN66
+    update_interval: 30s
+    
+    temperature:
+      name: Temperature
+      id: sen66_temp
+      accuracy_decimals: 1
+    humidity:
+      name: Humidity
+      id: sen66_humidity
+    voc:
+      name: VOC Index
+      id: sen66_voc
+    nox:
+      name: NOx Index
+      id: sen66_nox
+    co2:
+      name: Carbon Dioxide
+      id: sen66_co2
+    pm_1_0:
+      name: PM <1µm Weight concentration
+      id: sen66_pm10
+    pm_2_5:
+      name: PM <2.5µm Weight concentration
+      id: sen66_pm25
+    pm_4_0:
+      name: PM <4µm Weight concentration
+      id: sen66_pm40
+    pm_10_0:
+      name: PM <10µm Weight concentration
+      id: sen66_pm100

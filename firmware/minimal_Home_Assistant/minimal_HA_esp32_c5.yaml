@@ -1,0 +1,69 @@
+esphome:
+  name: "air"
+
+# Specify that we're using the ESP32-C5 
+esp32:
+  variant: esp32c5
+  framework:
+    type: esp-idf
+
+# Optionally set wifi credentials. 
+# If you don't provide any, the device will ask for them 
+# when you connect to AirAP, so it can connect to your home wifi
+wifi:
+  # networks:
+  # - ssid: !secret ssid_downstairs
+  #   password: !secret password_downstairs
+  # - ssid: !secret ssid_upstairs
+  #   password: !secret password_upstairs
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "AirAP"
+    password: "password"
+
+# So we can use this device with Home Assitant
+api:
+
+captive_portal:
+
+logger:
+
+i2c:
+  sda: GPIO23
+  scl: GPIO24
+  scan: true
+
+sensor:
+  - platform: sen6x
+    type: SEN66
+    update_interval: 30s
+    
+    temperature:
+      name: Temperature
+      id: sen66_temp
+      accuracy_decimals: 1
+    humidity:
+      name: Humidity
+      id: sen66_humidity
+    voc:
+      name: VOC Index
+      id: sen66_voc
+    nox:
+      name: NOx Index
+      id: sen66_nox
+    co2:
+      name: Carbon Dioxide
+      id: sen66_co2
+    pm_1_0:
+      name: PM <1µm Weight concentration
+      id: sen66_pm10
+    pm_2_5:
+      name: PM <2.5µm Weight concentration
+      id: sen66_pm25
+    pm_4_0:
+      name: PM <4µm Weight concentration
+      id: sen66_pm40
+    pm_10_0:
+      name: PM <10µm Weight concentration
+      id: sen66_pm100
