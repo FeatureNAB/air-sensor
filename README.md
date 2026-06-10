@@ -53,7 +53,7 @@ To build this version, you will need:
 
 *   [Sensirion SEN66](https://mou.sr/44c63Ji)
 *   [Seeed XIAO ESP32-C6](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbEVLbTd0dGJnZFpQeENEZVg1UGV1QXZnaUF5UXxBQ3Jtc0tuU0hGTnIzSEkyQ1NUTmktUU1jV1ZqeVBKUG5LbHlEQ3ZrbjM0MkF5VjBqczRQbVNVd1lCc0IwV2NaUm5vb1FXYU1ZSzBDdEpOTm85MUpHb0VqLWpDdVdZSXR3NWdzQ0hybEtKcmFlbVRkcVdJc2p5RQ&q=https%3A%2F%2Fwww.seeedstudio.com%2FSeeed-StudioXIAO-ESP32C6-3PCS-p-5918.html%3Fsensecap_affiliate%3DdzMqXsY%26referring_service%3Dlink&v=DqiMmY5ppnE) microcontroller
-*   www.seeedstudio.com/2-13-Monochrome-ePaper-Display-with-122x250-Pixels-p-5778.html?sensecap_affiliate=dzMqXsY&referring_service=link (Note: this MUST be monochrome, the current PCB design DOES NOT WORK with colour epaper)
+*   [2.13" e-ink Monochrome Display](www.seeedstudio.com/2-13-Monochrome-ePaper-Display-with-122x250-Pixels-p-5778.html?sensecap_affiliate=dzMqXsY&referring_service=link) (Note: this MUST be monochrome, the current PCB design DOES NOT WORK with colour epaper)
 *   Custom epaper driver board PCB (see below)
 *   4x M3 size heat set inserts. I used Ruthex.
 *   4x M3 bolts for the front + 1x M3 bolt to keep the PCB in place in the enclosure. CNC Kitchen sell these.
