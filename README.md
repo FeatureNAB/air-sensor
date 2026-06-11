@@ -4,6 +4,8 @@ This repository contains all the 3D models, PCB production files, and ESPHome so
 [![Watch the video](https://img.youtube.com/vi/DqiMmY5ppnE/0.jpg)](https://www.youtube.com/watch?v=DqiMmY5ppnE)
 
 The device uses an ESP32 and the Sensirion SEN66 to track 9 different air quality metrics (PM1, PM2.5, PM4, PM10, VOCs, NOx, CO2, Temperature, and Humidity) and displays them on an e-ink screen. It connects natively to [Home Assistant](https://www.home-assistant.io/) and the firmware is written using [ESPHome](https://esphome.io/).
+
+3D Files can be found on [Printables](https://www.printables.com/model/1751003-smart-desktop-air-quality-monitor-esp32-sen66), on [Makerworld](https://makerworld.com/en/models/2918992-smart-desktop-air-quality-monitor-esp32-sen66), or in the releases tab.
   
 ## What's in this Repository?
 
