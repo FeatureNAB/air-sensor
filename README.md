@@ -84,7 +84,6 @@ Same method as the Method B: firmware steps above. The yaml, images, and extra c
 If you are connecting this to Home Assistant and want the UI dashboard card shown in the video, you will need to install HACS (Home Assistant Community Store) and download the **[Air Quality Card by KadenThomp36](https://github.com/KadenThomp36/air-quality-card)**. The thresholds and algorithms in my `aqi_algo.h` match the WHO 2021 recommendations also used by this card, so the recommendations shown on the physical display on this Air Quality device should match those on this card/dashboard.
 
 ## Support the project
-[Patreon](https://www.patreon.com/FEATURE418) for anyone interested.
-So I can keep funding crazy R&D hardware projects like this!
+[Patreon](https://www.patreon.com/FEATURE418) for anyone interested, so I can continue making projects like this. Thanks!
 
-Some of the links on this page are affiliate links and help support these projects at no cost to you!
+Some of the links on this page are affiliate links and help support these projects at no cost to you.
