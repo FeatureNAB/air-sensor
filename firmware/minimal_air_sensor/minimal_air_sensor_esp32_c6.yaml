@@ -14,6 +14,7 @@ wifi:
 
 # So we can use this device standalone, without Home Assitant
 web_server:
+  local: true
 
 # This lets us see logs over USB to understand what the ESP is doing. 
 # Very Helpful during development.
