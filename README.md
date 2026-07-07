@@ -64,7 +64,7 @@ To build this version, you will need:
     *  Alternatively if you will use the dupont headers on the board you can buy premade cables [like these](https://www.amazon.ie/Connectors-Pre-Crimped-Compatible-Pixhawk4-Silicone/dp/B0CLD7S5VC) (note this cable won't attach to the stemma convenience connector on the PCB!)   
 
 #### 2. PCB
-I designed the PCB to be manufactured and assembled by [JLCPCB](https://jlcpcb.com/?from=FEATURE). The ordering process is shown in the video.
+I designed the PCB to be manufactured and assembled by [JLCPCB](https://jlcpcb.com/?from=FEATURE). The ordering process is shown in the video. JLCPCB also offer 3D Printing Services through JLC3DP, so you could have the enclosure made too if you dont have a 3D printer, and they also offer CNC machining services through JLCCNC, if you wanted to make one from metals for a super unique finish.
 1. Head to the **[Releases tab](../../releases)** and download the `PCB_fabrication_files.zip `.
 2. Upload the Gerber zip to JCLPCB.
 3. Enable **PCBA** (PCB Assembly) to have the tiny SMD components soldered for you.
